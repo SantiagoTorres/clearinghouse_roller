@@ -10,4 +10,4 @@ git clone git@github.com:/seattletestbed/portability
 
 echo "all sources should be here now"
 echo "please create the seattlegeni database and update the credentials in"
-echo "deploy.sh"
+echo "deploy.sh. After this, run ./deploy.sh to have your server running"
