@@ -31,7 +31,10 @@ sed -i "s/'PASSWORD':\ 'FILL_THIS_IN'/'PASSWORD': 'rawr12'/g" tmp/seattlegeni/we
 cd tmp
 find -name "*.r2py" -exec sed -i "s/dy_import_module('/dy_import_module('..\/seattle\//g" {} \;
 
-# run!
 cd seattlegeni
+# run the keyserver daemon... 
+python lockserver/lockserver_daemon.py &> lockserver.log &
+
+# run!
 python website/manage.py syncdb
 python website/manage.py runserver
